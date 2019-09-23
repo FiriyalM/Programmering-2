@@ -14,15 +14,15 @@ namespace Arv
 
         }
 
-        public double Area()
+        public override int Area()
         {
             return width * height / 2;
 
         }
 
-        public double Circumference()
+        public override int Circumference()
         {
-            double hypotenusa = Math.Sqrt(width * width + height * height);
+            int hypotenusa = (int)Math.Sqrt(width * width + height * height);
             return hypotenusa + width + height;
         }
 

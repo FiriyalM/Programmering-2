@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Arv
 {
-    class Shape
+    abstract class Shape
     {
         protected int height;
         protected int width;
@@ -14,9 +14,11 @@ namespace Arv
         {
             this.height = height;
             this.width = width;
-            
-
 
         }
+
+        public abstract int Area();
+
+        public abstract int Circumference();
     }
 }
