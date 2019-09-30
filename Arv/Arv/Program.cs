@@ -7,30 +7,46 @@ namespace Arv
         static void Main(string[] args)
         {
 
-            Shape shape = new Triangle(1, 1);
-            Console.WriteLine("Skriv in höjden: ");
-            int heightRectangle = int.Parse(Console.ReadLine());
-
-            Console.WriteLine("Skriv in bredden: ");
-            int widthRectangle = int.Parse(Console.ReadLine());
+            IShape shape = new Triangle(1, 1);
+  
 
             Console.WriteLine("Skriv in figuren: ");
             string s = Console.ReadLine();
 
             if (s == "triangel")
             {
-                shape = new Triangle(heightRectangle, widthRectangle);
+                Console.WriteLine("Skriv in höjden: ");
+                int height = int.Parse(Console.ReadLine());
+
+                Console.WriteLine("Skriv in bredden: ");
+                int width = int.Parse(Console.ReadLine());
+                shape = new Triangle(height, width);
+            }
+
+            else if (s == "rectangle")
+            {
+                Console.WriteLine("Skriv in höjden: ");
+                int height = int.Parse(Console.ReadLine());
+
+                Console.WriteLine("Skriv in bredden: ");
+                int width = int.Parse(Console.ReadLine());
+                shape = new Rectangle(height, width);
+
             }
 
             else
             {
-                shape = new Rectangle(heightRectangle, widthRectangle);
+                Console.WriteLine("Skriv in Radian");
+                int radius = int.Parse(Console.ReadLine());
+                shape = new Circle(radius);
+
+
 
             }
 
             Console.WriteLine("Arean är: "+ shape.Area());
 
-            Console.WriteLine("Omkretsen är: "+ shape.Circumference());
+            Console.WriteLine("Omkretsen är: " + shape.Circumference());
         }
     }
 }

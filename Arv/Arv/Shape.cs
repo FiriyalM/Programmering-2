@@ -4,21 +4,13 @@ using System.Text;
 
 namespace Arv
 {
-    abstract class Shape
+     interface IShape
     {
-        protected int height;
-        protected int width;
-        
+    
 
-        public Shape(int height, int width)
-        {
-            this.height = height;
-            this.width = width;
+        int Area();
 
-        }
 
-        public abstract int Area();
-
-        public abstract int Circumference();
+        int Circumference();
     }
 }

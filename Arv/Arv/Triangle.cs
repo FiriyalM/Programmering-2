@@ -4,23 +4,23 @@ using System.Text;
 
 namespace Arv
 {
-    class Triangle : Shape
+    class Triangle : IShape
     {
-
-        public Triangle(int height, int width) : base(height, width)
+        int height;
+        int width;
+        public Triangle(int height, int width)
         {
-
-
-
+            this.width = width;
+            this.height = height;
         }
 
-        public override int Area()
+        public int Area()
         {
             return width * height / 2;
 
         }
 
-        public override int Circumference()
+        public int Circumference()
         {
             int hypotenusa = (int)Math.Sqrt(width * width + height * height);
             return hypotenusa + width + height;
